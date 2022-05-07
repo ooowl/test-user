@@ -1,0 +1,62 @@
+swagger: "2.0"
+info:
+  description: 用户管理接口
+  version: 1.0.0
+  title: 用户管理微服务接口文档
+basePath: /
+tags:
+  - name: User
+    description: 用户
+  - name: UserLoginMgmt
+    description: 用户登陆管理
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /v1/users/{uid}:
+    parameters:
+      - name: uid
+        description: 用户唯一标识，mid phone userName其中之一
+        in: path
+        required: true
+        type: string
+        maxLength: 20
+    get:
+      tags:
+        - User
+      summary: 查询用户信息
+      description: 根据uid查询用户信息id可以为 mid phone userName其中之一，通过正则表达式判断(字母开头为userName、数字开头并符合手机格式为phone、其他的都作为mid)
+      operationId: getUser
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/User"
+
+definitions:
+
+  User:
+    description: 用户
+    type: object
+    properties:
+      mid:
+        description: 用户id
+        type: integer
+        format: int32
+        readOnly: true
+        x-toString: true
+        x-default: 1
+      userName:
+        description: 用户名
+        type: object
+        maxLength: 20
+        x-default: abc
+      nickName:
+        description: 用户昵称
+        type: string
+        maxLength: 20
+        x-langConvert: true
