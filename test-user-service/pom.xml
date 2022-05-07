@@ -16,17 +16,5 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-    <dependencies>
-
-        <!-- springboot - web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.6.1</version>
-        </dependency>
-
-    </dependencies>
-
-
 
 </project>

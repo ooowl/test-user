@@ -43,20 +43,15 @@ definitions:
     description: 用户
     type: object
     properties:
-      mid:
+      userId:
         description: 用户id
         type: integer
         format: int32
-        readOnly: true
-        x-toString: true
-        x-default: 1
       userName:
         description: 用户名
         type: object
         maxLength: 20
-        x-default: abc
       nickName:
         description: 用户昵称
         type: string
         maxLength: 20
-        x-langConvert: true

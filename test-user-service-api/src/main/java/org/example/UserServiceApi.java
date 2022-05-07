@@ -1,16 +1,7 @@
-package user;
+package org.example;
 
 import org.springframework.stereotype.Component;
 
-/**
- * <pre>
- * classname UserServiceApi
- * description
- * </pre>
- *
- * @author wangxiaopeng
- * @date 2022/5/5
- **/
 @Component
 public class UserServiceApi {
 
@@ -20,8 +11,8 @@ public class UserServiceApi {
         this.userFeignClient = userFeignClient;
     }
 
-    public String getUser() {
+    public UserDTO getUser() {
         return userFeignClient.getUser();
     }
-    
+
 }

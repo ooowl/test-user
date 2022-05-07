@@ -1,4 +1,4 @@
-package user;
+package org.example;
 
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.cloud.openfeign.EnableFeignClients;
